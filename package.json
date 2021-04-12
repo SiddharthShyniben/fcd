@@ -1,0 +1,15 @@
+{
+  "name": "fcd",
+  "version": "1.0.0",
+  "description": "Faster cd-ing.",
+  "main": "bin/index.js",
+  "bin": {
+    "fcd": "./bin/index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "SiddharthShyniben <siddharth.muscat@gmail.com>",
+  "license": "GPL-3.0"
+}

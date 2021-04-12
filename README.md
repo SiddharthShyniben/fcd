@@ -1,0 +1,2 @@
+# fcd
+ Faster cd-ing.
