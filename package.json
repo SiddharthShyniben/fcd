@@ -1,15 +1,22 @@
 {
   "name": "fcd",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "Faster cd-ing.",
   "main": "bin/index.js",
   "bin": {
     "fcd": "./bin/index.js"
   },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
+  "keywords": [
+    "cd",
+    "cli"
+  ],
+  "preferGlobal": true,
   "author": "SiddharthShyniben <siddharth.muscat@gmail.com>",
-  "license": "GPL-3.0"
+  "license": "GPL-3.0",
+  "dependencies": {
+    "enquirer": "^2.3.6",
+    "findit": "^2.0.0",
+    "ora": "^5.2.0",
+    "yargs": "^16.2.0"
+  }
 }
