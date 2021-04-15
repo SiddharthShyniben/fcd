@@ -5,13 +5,11 @@ const ora = require("ora");
 
 let spinner;
 
-function sleep(sleepDuration) {
-  var now = new Date().getTime();
-  while (new Date().getTime() < now + sleepDuration) { /* do nothing */ }
-}
-
 exports.cdHandler = (pathStr, verbose, config) => {
-  if (config) return;
+  if (config) {
+    configHandler(pathStr, verbose)
+    return;
+  }
 
   if (verbose) messenger.info(["Verbose mode on", ""]);
 
@@ -80,6 +78,6 @@ const askAndCD = async (folders, directory) => {
 };
 
 const cd = dir => {
-  const { exec } = require("child_process");
-  exec("echo 'Hi'", { cwd: "." });
+  const clipboard = require("clipboardy");
+  clipboard.write("cd " + dir + "\n").then(() => messenger.info(["Command copied to clipboard successfully"]));
 };

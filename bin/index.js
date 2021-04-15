@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-const { cdHandler, configHandler } = require('./cli');
+const { cdHandler } = require('./cli');
 
 const yargs = require("yargs")
   .scriptName("fcd")
@@ -9,7 +9,7 @@ const yargs = require("yargs")
     {
       alias: "configure",
       describe: "Add configuration",
-      type: "string",
+      type: "boolean",
     },
   )
   .option(
@@ -24,9 +24,9 @@ const yargs = require("yargs")
     "$0 <folder>",
     "Change into the folder",
     yarg => yarg.positional("folder", { type: "string", describe: "The folder to cd into" }),
-    argv => cdHandler(argv.folder, argv.verbose, "configure" in argv)
+    argv => cdHandler(argv.folder, argv.verbose, argv.configure)
   )
   .help()
   .argv;
 
-if (yargs.configure) configHandler(yargs.configure);
+console.log(yargs)
