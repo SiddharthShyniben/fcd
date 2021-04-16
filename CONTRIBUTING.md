@@ -19,3 +19,4 @@ Don't know what to contribute? Here's a todo list for everyone (and myself):
 
 - [ ] Add config support
   - See [`conf`](https://github.com/sindresorhus/conf)
+- [ ] `../path` is broken
