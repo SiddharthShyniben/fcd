@@ -1,0 +1,391 @@
+# The configurations that used for the recording, feel free to edit them
+config:
+
+  # Specify a command to be executed
+  # like `/bin/bash -l`, `ls`, or any other commands
+  # the default is bash for Linux
+  # or powershell.exe for Windows
+  command: fcd
+  
+  # Specify the current working directory path
+  # the default is the current working directory path
+  cwd: /Users/apple
+  
+  # Export additional ENV variables
+  env:
+    recording: true
+  
+  # Explicitly set the number of columns
+  # or use `auto` to take the current
+  # number of columns of your shell
+  cols: 104
+  
+  # Explicitly set the number of rows
+  # or use `auto` to take the current
+  # number of rows of your shell
+  rows: 24
+  
+  # Amount of times to repeat GIF
+  # If value is -1, play once
+  # If value is 0, loop indefinitely
+  # If value is a positive number, loop n times
+  repeat: 0
+  
+  # Quality
+  # 1 - 100
+  quality: 100
+  
+  # Delay between frames in ms
+  # If the value is `auto` use the actual recording delays
+  frameDelay: auto
+  
+  # Maximum delay between frames in ms
+  # Ignored if the `frameDelay` isn't set to `auto`
+  # Set to `auto` to prevent limiting the max idle time
+  maxIdleTime: 2000
+  
+  # The surrounding frame box
+  # The `type` can be null, window, floating, or solid`
+  # To hide the title use the value null
+  # Don't forget to add a backgroundColor style with a null as type
+  frameBox:
+    type: floating
+    title: fcd vs cd
+    style:
+      # border: 0px black solid
+      boxShadow: "0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06), 0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.12)"
+        # margin: 0px
+  
+  # Add a watermark image to the rendered gif
+  # You need to specify an absolute path for
+  # the image on your machine or a URL, and you can also
+  # add your own CSS styles
+  watermark:
+    imagePath: null
+    style:
+      position: absolute
+      right: 15px
+      bottom: 15px
+      width: 100px
+      opacity: 0.9
+  
+  # Cursor style can be one of
+  # `block`, `underline`, or `bar`
+  cursorStyle: block
+  
+  # Font family
+  # You can use any font that is installed on your machine
+  # in CSS-like syntax
+  fontFamily: "Monaco, Lucida Console, Ubuntu Mono, Monospace"
+  
+  # The size of the font
+  fontSize: 12
+  
+  # The height of lines
+  lineHeight: 1
+  
+  # The spacing between letters
+  letterSpacing: 0
+  
+  # Theme
+  theme:
+    background: "transparent"
+    foreground: "#afafaf"
+    cursor: "#c7c7c7"
+    black: "#232628"
+    red: "#fc4384"
+    green: "#b3e33b"
+    yellow: "#ffa727"
+    blue: "#75dff2"
+    magenta: "#ae89fe"
+    cyan: "#708387"
+    white: "#d5d5d0"
+    brightBlack: "#626566"
+    brightRed: "#ff7fac"
+    brightGreen: "#c8ed71"
+    brightYellow: "#ebdf86"
+    brightBlue: "#75dff2"
+    brightMagenta: "#ae89fe"
+    brightCyan: "#b1c6ca"
+    brightWhite: "#f9f9f4"
+  
+# Records, feel free to edit them
+records:
+  - delay: 1015
+    content: "\e[?1034hAPPLEs-MacBook-Pro:~ apple$ "
+  - delay: 1344
+    content: '#'
+  - delay: 197
+    content: ' '
+  - delay: 370
+    content: T
+  - delay: 272
+    content: h
+  - delay: 135
+    content: e
+  - delay: 81
+    content: ' '
+  - delay: 415
+    content: o
+  - delay: 336
+    content: r
+  - delay: 200
+    content: i
+  - delay: 192
+    content: g
+  - delay: 408
+    content: i
+  - delay: 232
+    content: 'n'
+  - delay: 159
+    content: a
+  - delay: 128
+    content: l
+  - delay: 249
+    content: ' '
+  - delay: 342
+    content: c
+  - delay: 90
+    content: d
+  - delay: 152
+    content: ' '
+  - delay: 216
+    content: c
+  - delay: 175
+    content: o
+  - delay: 274
+    content: m
+  - delay: 176
+    content: m
+  - delay: 150
+    content: a
+  - delay: 160
+    content: 'n'
+  - delay: 145
+    content: d
+  - delay: 889
+    content: "\r\nAPPLEs-MacBook-Pro:~ apple$ "
+  - delay: 1751
+    content: c
+  - delay: 104
+    content: d
+  - delay: 317
+    content: ' '
+  - delay: 761
+    content: '~'
+  - delay: 472
+    content: /
+  - delay: 449
+    content: S
+  - delay: 208
+    content: i
+  - delay: 280
+    content: t
+  - delay: 152
+    content: e
+  - delay: 264
+    content: s
+  - delay: 1038
+    content: /
+  - delay: 1226
+    content: f
+  - delay: 240
+    content: c
+  - delay: 71
+    content: d
+  - delay: 873
+    content: "\r\nbash: cd: /Users/apple/Sites/fcd: No such file or directory\r\nAPPLEs-MacBook-Pro:~ apple$ "
+  - delay: 2095
+    content: '#'
+  - delay: 223
+    content: ' '
+  - delay: 344
+    content: W
+  - delay: 238
+    content: h
+  - delay: 370
+    content: o
+  - delay: 168
+    content: o
+  - delay: 168
+    content: p
+  - delay: 152
+    content: s
+  - delay: 184
+    content: ' '
+  - delay: 1336
+    content: "\r\nAPPLEs-MacBook-Pro:~ apple$ "
+  - delay: 848
+    content: c
+  - delay: 73
+    content: d
+  - delay: 280
+    content: ' '
+  - delay: 1526
+    content: '~'
+  - delay: 249
+    content: /
+  - delay: 456
+    content: S
+  - delay: 136
+    content: i
+  - delay: 256
+    content: t
+  - delay: 136
+    content: e
+  - delay: 224
+    content: s
+  - delay: 600
+    content: /
+  - delay: 472
+    content: P
+  - delay: 1008
+    content: r
+  - delay: 552
+    content: o
+  - delay: 304
+    content: j
+  - delay: 144
+    content: e
+  - delay: 200
+    content: c
+  - delay: 217
+    content: s
+  - delay: 479
+    content: "\b\e[K"
+  - delay: 784
+    content: t
+  - delay: 117
+    content: s
+  - delay: 467
+    content: /
+  - delay: 318
+    content: f
+  - delay: 218
+    content: c
+  - delay: 112
+    content: d
+  - delay: 1184
+    content: "\r\nAPPLEs-MacBook-Pro:fcd apple$ "
+  - delay: 765
+    content: c
+  - delay: 57
+    content: d
+  - delay: 234
+    content: ' '
+  - delay: 496
+    content: '~'
+  - delay: 432
+    content: /
+  - delay: 416
+    content: "\r\nAPPLEs-MacBook-Pro:~ apple$ "
+  - delay: 1711
+    content: '#'
+  - delay: 192
+    content: ' '
+  - delay: 880
+    content: T
+  - delay: 256
+    content: h
+  - delay: 152
+    content: e
+  - delay: 112
+    content: ' '
+  - delay: 288
+    content: f
+  - delay: 207
+    content: c
+  - delay: 110
+    content: d
+  - delay: 172
+    content: ' '
+  - delay: 128
+    content: c
+  - delay: 254
+    content: o
+  - delay: 232
+    content: m
+  - delay: 168
+    content: m
+  - delay: 128
+    content: a
+  - delay: 136
+    content: 'n'
+  - delay: 208
+    content: d
+  - delay: 1112
+    content: "\r\nAPPLEs-MacBook-Pro:~ apple$ "
+  - delay: 1432
+    content: f
+  - delay: 215
+    content: c
+  - delay: 105
+    content: d
+  - delay: 288
+    content: ' '
+  - delay: 448
+    content: .
+  - delay: 78
+    content: /
+  - delay: 560
+    content: f
+  - delay: 250
+    content: c
+  - delay: 104
+    content: d
+  - delay: 616
+    content: "\r\n"
+  - delay: 945
+    content: "\e[?25l\e[36m⠋\e[39m Searching..."
+  - delay: 83
+    content: "\e[2K\e[1G\e[36m⠙\e[39m Searching Public/Drop Box"
+  - delay: 81
+    content: "\e[2K\e[1G\e[36m⠹\e[39m Searching Music/iTunes/iTunes Media/Music/Unknown Artist"
+  - delay: 81
+    content: "\e[2K\e[1G\e[36m⠸\e[39m Searching Music/iTunes/iTunes Media/Music/Unknown Artist/Unknown Album"
+  - delay: 83
+    content: "\e[2K\e[1G\e[36m⠼\e[39m Searching Music/iTunes/iTunes Media/Music/Unknown Artist/Unknown Album"
+  - delay: 83
+    content: "\e[2K\e[1G\e[36m⠴\e[39m Searching Music/iTunes/iTunes Media/Music/Unknown Artist/Unknown Album"
+  - delay: 81
+    content: "\e[2K\e[1G\e[36m⠦\e[39m Searching Music/iTunes/iTunes Media/Music/Unknown Artist/Unknown Album"
+  - delay: 85
+    content: "\e[2K\e[1G\e[36m⠧\e[39m Searching Music/iTunes/iTunes Media/Music/Unknown Artist/Unknown Album"
+  - delay: 80
+    content: "\e[2K\e[1G\e[36m⠇\e[39m Searching Music/iTunes/iTunes Media/Music/Unknown Artist/Unknown Album"
+  - delay: 82
+    content: "\e[2K\e[1G\e[36m⠏\e[39m Searching Music/iTunes/iTunes Media/Music/Unknown Artist/Unknown Album"
+  - delay: 85
+    content: "\e[2K\e[1G\e[36m⠋\e[39m Searching Music/iTunes/iTunes Media/Music/Unknown Artist/Unknown Album"
+  - delay: 80
+    content: "\e[2K\e[1G\e[36m⠙\e[39m Searching Sites/Projects/uno-reloaded/src"
+  - delay: 81
+    content: "\e[2K\e[1G\e[36m⠹\e[39m Searching Sites/Projects/uno-reloaded/src"
+  - delay: 81
+    content: "\e[2K\e[1G\e[36m⠸\e[39m Searching Sites/Projects/uno-reloaded/src"
+  - delay: 81
+    content: "\e[2K\e[1G\e[36m⠼\e[39m Searching Sites/Projects/uno-reloaded/src"
+  - delay: 81
+    content: "\e[2K\e[1G\e[36m⠴\e[39m Searching Sites/Projects/uno-reloaded/src"
+  - delay: 81
+    content: "\e[2K\e[1G\e[36m⠦\e[39m Searching Sites/Sandbox/uno-test/node_modules aborted (ignored folder)"
+  - delay: 81
+    content: "\e[2K\e[1G\e[36m⠧\e[39m Searching Sites/Projects/reward/frontend/src"
+  - delay: 80
+    content: "\e[2K\e[1G\e[36m⠇\e[39m Searching Sites/Projects/reward/frontend/src"
+  - delay: 80
+    content: "\e[2K\e[1G\e[36m⠏\e[39m Searching Sites/Projects/halfmoon-angular/projects/halfmoon-angular/src/lib"
+  - delay: 80
+    content: "\e[2K\e[1G\e[36m⠋\e[39m Searching Sites/Projects/priyas-kitchen/frontend/src/app/components/recipe"
+  - delay: 81
+    content: "\e[2K\e[1G\e[36m⠙\e[39m Searching Sites/Projects/priyas-kitchen/frontend/src/app/components/recipe/create/success"
+  - delay: 81
+    content: "\e[2K\e[1G\e[36m⠹\e[39m Searching Sites/Projects/priyas-kitchen/frontend/src/app/components/recipe/create/success"
+  - delay: 15
+    content: "\e[2K\e[1G\e[?25h\e[32m✔\e[39m Search complete\r\n"
+  - delay: 952
+    content: "fcd \e[34mINFO!\e[0m Command copied to clipboard successfully\r\n\e[?25h"
+  - delay: 6
+    content: 'APPLEs-MacBook-Pro:~ apple$ '
+  - delay: 2307
+    content: "cd ./Sites/Projects/fcd\r\nAPPLEs-MacBook-Pro:fcd apple$ "
