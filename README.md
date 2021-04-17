@@ -18,7 +18,7 @@
   <p align="center">
     Better <code>cd</code>ing for macOS
     <br />
-    <a href="https://github.com/SiddharthShyniben/fcd"><strong>Explore the docs »</strong></a>
+    <a href="#documentation"><strong>Explore the docs »</strong></a>
     <br />
     <br />
     <a href="https://github.com/SiddharthShyniben/fcd/issues">Report Bug</a>
@@ -47,11 +47,11 @@
       </ul>
     </li>
     <li><a href="#usage">Usage</a></li>
+    <li><a href="#documentation">Documentation</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgements">Acknowledgements</a></li>
   </ol>
 </details>
 
@@ -69,7 +69,7 @@
 Ever had to type out a long `cd ~/Sites/Projects/project`, find out the path is wrong, rewrite it to `cd ~/Sites/Sandbox/project`? You just wasted a minute or two. 
 This inspired me to create this tool: `fcd`.
 
-`fcd` automatically reads the <abbr title="the directory name of a path, similar to the Unix dirname command">dirname</abbr> and the <abbr title="the last portion of a path, similar to the Unix basename">basename</abbr> and searches for any folder with basename as the name in the dirname folder. Once it finishes:
+`fcd` automatically reads the <abbr title="the directory name of a path, similar to the Unix dirname command">dirname</abbr> and the <abbr title="the last portion of a path, similar to the Unix basename">basename</abbr> and searches for any folder with basename as the name in the dirname folder (Basically, if you input `"some/where/else"`, the program returns the path to `"some/where/**/else"`). Once it finishes:
 * If there is more than one folder named basename, it gives you a list of options to choose from, then it copies the `cd <path-to-folder>` command to your clipboard.
 * If there is only one folder named basename, it directly copies the `cd <path-to-folder>` command to your clipboard.
 
@@ -109,7 +109,31 @@ You need to have [Node.js][node-url] (and npm) installed.
 $ fcd path/to/search/foldername-to-search-for
 ```
 
-_For more examples, please refer to the [Documentation](https://example.com)_
+_For more examples, please refer to the [Documentation](#documentation)_
+
+
+
+<!-- Documentation -->
+## Documentation
+
+The usage of this cli is very simple. It boasts two commands:
+
+* The `fcd` command
+* (**coming soon**) The `fcd-config` command
+
+### `fcd`
+
+`fcd` takes one argument `"path"` to search. You can optionally use the `"-v"`/`"--verbose"` command to run it in verbose mode, which shows you all the searched folders.
+
+Example:
+
+```sh
+fcd path -v
+```
+
+### `fcd-config`
+
+Coming soon
 
 
 
