@@ -69,7 +69,7 @@
 Ever had to type out a long `cd ~/Sites/Projects/project`, find out the path is wrong, rewrite it to `cd ~/Sites/Sandbox/project`? You just wasted a minute or two. 
 This inspired me to create this tool: `fcd`.
 
-`fcd` automatically reads the <abbr title="the directory name of a path, similar to the Unix dirname command">dirname</abbr> and the <abbr title="the last portion of a path, similar to the Unix basename">basename</abbr> and searches for any folder with basename as the name in the dirname folder (Basically, if you input `"some/where/else"`, the program returns the path to `"some/where/**/else"`). Once it finishes:
+`fcd` automatically reads the <abbr title="the directory name of a path, similar to the Unix dirname command">dirname</abbr> and the <abbr title="the last portion of a path, similar to the Unix basename">basename</abbr> of the input and searches for any folder with basename as the name in the dirname folder (Basically, if you input `"some/where/else"`, the program returns the path to `"some/where/**/else"`). Once it finishes:
 * If there is more than one folder named basename, it gives you a list of options to choose from, then it copies the `cd <path-to-folder>` command to your clipboard.
 * If there is only one folder named basename, it directly copies the `cd <path-to-folder>` command to your clipboard.
 
