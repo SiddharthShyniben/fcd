@@ -106,24 +106,10 @@ You need to have [Node.js][node-url] (and npm) installed.
 ## Usage
 
 ```sh
-fcd <folder> [options]
-
-Change into the folder
-
-Positionals:
-  folder  The folder to cd into                       [string]
-
-Options:
-      --version  Show version number                 [boolean]
-  -v, --verbose  Run in verbose mode                 [boolean]
-      --help     Show help                           [boolean]
-
-Examples:
-  fcd ./somewhere  Your clipboard will now be filled with the
-                   path to somewhere
+$ fcd path/to/search/foldername-to-search-for
 ```
 
-<!-- _For more examples, please refer to the [Documentation](https://example.com)_ -->
+_For more examples, please refer to the [Documentation](https://example.com)_
 
 
 
@@ -146,7 +132,7 @@ Contributions are what make the open source community such an amazing place to b
 5. Push to the Branch (`git push origin feature/AmazingFeature`)
 6. Open a Pull Request
 
-More info + A todo list is available in the [CONTRIBUTING file](./CONTRIBUTING.md)
+More info is available in the [CONTRIBUTING file](./CONTRIBUTING.md)
 
 
 
@@ -163,16 +149,6 @@ Distributed under the GNU GPL-3.0 License. See [`LICENSE`](./LICENSE) for more i
 Siddharth Shyniben - siddharth.muscat@gmail.com
 
 Project Link: [https://github.com/SiddharthShyniben/fcd](https://github.com/SiddharthShyniben/fcd)
-
-
-
-<!-- ACKNOWLEDGEMENTS -->
-<!--
-## Acknowledgements
-
-* []()
-* []()
-* []() -->
 
 
 
