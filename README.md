@@ -73,10 +73,6 @@ This inspired me to create this tool: `fcd`.
 * If there is more than one folder named basename, it gives you a list of options to choose from, then it copies the `cd <path-to-folder>` command to your clipboard.
 * If there is only one folder named basename, it directly copies the `cd <path-to-folder>` command to your clipboard.
 
-For example:
-* If you type in `cd ./folder`
-  * The `basename` is `"folder"` and the `dirname` is `"."` (The current directory)
-
 I originally meant to automatically execute the `cd <path-to-folder>` command, but then I realized that **it is impossible**, so the `cd <path-to-folder>` command is copied to clipboard instead.
 
 

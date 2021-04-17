@@ -3,7 +3,9 @@
   "version": "0.3.0-beta",
   "description": "Faster cd-ing.",
   "main": "bin/index.js",
-  "bin": "./bin/index.js",
+  "bin": {
+    "fcd": "./bin/index.js"
+  },
   "files": [
     "bin/"
   ],
@@ -19,6 +21,10 @@
     "enquirer": "^2.3.6",
     "findit": "^2.0.0",
     "ora": "^5.2.0",
+    "tilde-expansion": "^0.0.0",
     "yargs": "^16.2.0"
+  },
+  "devDependencies": {
+    "jshint": "^2.12.0"
   }
 }
