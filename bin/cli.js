@@ -1,23 +1,23 @@
 const findit = require("findit");
-const path = require("path");
-const messenger = require("./messenger");
 const ora = require("ora");
+const path = require("path");
 
-const { ignoreFolders: ignoredFolders } = require("./utils");
+const messenger = require("./messenger");
+const { ignoredFolders, standardizePath } = require("./utils");
 
 let spinner;
 
-const handler = exports.handler = (pathStr, verbose) => {
+const handler = exports.handler = (input, verbose) => {
   if (verbose) messenger.info("Verbose mode on", "");
 
-  pathStr = standardizePath(pathStr);
+  input = standardizePath(input);
 
-  if (pathStr) {
+  if (input) {
     let folders = [];
 
     if (!verbose) spinner = ora("Searching...").start();
 
-    const finder = findit(pathStr[0]);
+    const finder = findit(input.dirname);
 
     finder.on("directory", (dir, stat, stopǃ) => {
       if (verbose) messenger.info(`Searching ${dir}`);
@@ -35,7 +35,7 @@ const handler = exports.handler = (pathStr, verbose) => {
         verbose ? messenger.info(`Searching ${dir} aborted (dot folder)`) : spinner.text += ' aborted (dot folder)';
       }
 
-      if (path.basename(dir) == pathStr[1]) folders.push(dir);
+      if (path.basename(dir) == input.basename) folders.push(dir);
     });
 
     finder.on("end", () => {
@@ -43,48 +43,36 @@ const handler = exports.handler = (pathStr, verbose) => {
       else messenger.info("", "Search complete");
 
       // Now ask user where to cd and then cd
-      askAndCD(folders, pathStr[0]);
+      askAndCD(folders, input.dirname);
     });
 
-    finder.on("error", messenger.error)
-
     // There's no other way path can be undefined so....
-  } else messenger.error("No path specified", "This looks like a problem with fcd itself", "Please report this error at https://git.io/JOOUk");
+  } else messenger.error("No path specified", "This looks like a problem with fcd itself", "Please report this error at https://github.com/SiddharthShyniben/fcd");
 };
 
-// This is a really small function.
-// But it's here in case I want to improve
-const standardizePath = pathStr => {
-  if (!pathStr) return;
-
-  // Normalize path ("~/Assets/../Files" => "~/Files") + Remove trailing slashes
-  pathStr = path.join(pathStr).replace(/\/+$/, "");
-
-  // Return dirname, foldername
-  return [path.dirname(pathStr), path.basename(pathStr)];
-};
-
-const askAndCD = async (folders, directory) => {
-  if (folders.length == 0) {
+const askAndCD = async (basesFound, dirname) => {
+  if (basesFound.length == 0) {
     messenger.error("Folder not found");
-  } else if (folders.length == 1) {
-    cd(folders[0]);
+  } else if (basesFound.length == 1) {
+    cd(basesFound[0]);
   } else {
     const { Select } = require('enquirer');
 
     const prompt = new Select({
       name: 'folder',
       message: 'Pick a folder to cd into',
-      choices: folders
+      choices: basesFound
     });
 
     prompt.run()
-      .then(answer => cd(answer, directory))
+      .then(answer => cd(answer, dirname))
       .catch(messenger.error);
   }
 };
 
 const cd = (basename, dirname) => {
   const clipboard = require("clipboardy");
-  clipboard.write("cd " + (dirname ? dirname : ".") + "/" + basename + "\n").then(() => messenger.info("Command copied to clipboard successfully"));
+  // write "cd (dirname or .)/basename(newline \n)"
+  clipboard.write("cd " + (dirname ? dirname : "") + basename + "\n")
+    .then(() => messenger.info("Command copied to clipboard successfully"));
 };
