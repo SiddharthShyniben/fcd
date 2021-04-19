@@ -1,5 +1,6 @@
 [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
+[![Downloads][downloads-shield]][downloads-url]
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
 [![MIT License][license-shield]][license-url]
@@ -10,7 +11,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/SiddharthShyniben/fcd">
-    <img src="assets/logo.svg" alt="Logo" width="80" height="80">
+    <img src="assets/logo.svg" alt=">_" width="80" height="80">
   </a>
 
   <h3 align="center">fcd</h3>
@@ -119,7 +120,7 @@ _For more examples, please refer to the [Documentation](#documentation)_
 The usage of this cli is very simple. It boasts two commands:
 
 * The `fcd` command
-* (**coming soon**) The `fcd-config` command
+* The `fcd-config` command
 
 ### `fcd`
 
@@ -242,6 +243,8 @@ Project Link: [https://github.com/SiddharthShyniben/fcd](https://github.com/Sidd
 <!-- MARKDOWN LINKS & IMAGES -->
 [contributors-shield]: https://img.shields.io/github/contributors/SiddharthShyniben/fcd.svg?style=for-the-badge
 [contributors-url]: https://github.com/SiddharthShyniben/fcd/graphs/contributors
+[downloads-shield]: https://img.shields.io/npm/dw/fcd?style=for-the-badge
+[downloads-url]: https://www.npmjs.com/package/fcd
 [forks-shield]: https://img.shields.io/github/forks/SiddharthShyniben/fcd.svg?style=for-the-badge
 [forks-url]: https://github.com/SiddharthShyniben/fcd/network/members
 [stars-shield]: https://img.shields.io/github/stars/SiddharthShyniben/fcd.svg?style=for-the-badge
