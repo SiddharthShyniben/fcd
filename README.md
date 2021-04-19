@@ -94,18 +94,18 @@ You need to have [Node.js][node-url] (and npm) installed.
 ### Installation
 
 1. Install using npm
-  ```sh
-    npm i -g fcd
+  ```console
+    $ npm i -g fcd
   ```
 2. Be more productive :smile:
-  ```sh
-    fcd ./project
+  ```console
+    $ fcd ./project
   ```
 
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-```sh
+```console
 $ fcd path/to/search/foldername-to-search-for
 ```
 
@@ -123,17 +123,78 @@ The usage of this cli is very simple. It boasts two commands:
 
 ### `fcd`
 
-`fcd` takes one argument `"path"` to search. You can optionally use the `"-v"`/`"--verbose"` command to run it in verbose mode, which shows you all the searched folders.
+`fcd` takes one argument `"path"` to search. You can optionally use the `"-v"`/`"--verbose"` option to run it in verbose mode, which shows you all the searched folders.
 
 Example:
 
-```sh
-fcd path -v
+```console
+$ fcd path -v
 ```
 
 ### `fcd-config`
 
-Coming soon
+The `fcd-config` command is used to configure the `fcd` command. It currently has only configurable three options: 
+
+* `ignoredFolders`: List of folders to be ignored. Defaults to `node_modules,Trash,Library`
+* `ignoreDotFolders`: Whether to ignore `.folders` like `.git` or `.bin`. Defaults to `true`
+* `addNewlineToCopy`: Whether to add a newline to the copied `cd` command. When set to `true`, the copied `cd` command will automatically run when pasted and vice-versa. Defaults to `true`
+
+There are quite a few sub-commands, namely:
+
+* `get <key>`: Used to get the value of a configuration.
+  
+  Example:
+  ```console
+  $ fcd-config get ignoredFolders
+  fcd SUC! `ignoredFolders`: `["Trash","node_modules","Library"]`
+  $ fcd-config get ignoreDotFolders
+  fcd SUC! `ignoreDotFolders`: `true`
+  ```
+* `set <key> <value>`: Used to set the value of a configuration.
+
+  `set`ting completely overwrites the previous configuration. If you meant to add a value to, for example, `ignoredFolders` use the `add` command.
+  
+  Example:
+  ```console
+  $ fcd-config set ignoredFolders Trash,node_modules,Library,Music
+  fcd WARN! Setting array values directly will overwrite all values
+  fcd WARN! not add to them. Use the add command if you meant to add
+  fcd SUC! Set `ignoredFolders` to `Trash,node_modules,Library,Music`
+  $ fcd-config set ignoreDotFolders false
+  fcd SUC! Set `ignoreDotFolders` to `false`
+  ```
+* `add <key> <values...>`: Used to add a value to a configuration with an array as a value.
+
+  This command can currently be used only for the `ignoreDotFolders` setting. If you set any other property using this command, that setting will become `false`, even if the success message does not say so.
+  <!-- I didn't mean to, but yeah, I got lazy -->
+  
+  Example:
+  ```console
+  $ fcd-config add ignoredFolders Music
+  fcd SUC! Added `Music` to `ignoredFolders`
+  $ fcd-config add ignoreDotFolders true
+  fcd SUC! Added `true` to `ignoreDotFolders`
+  $ fcd-config get ignoreDotFolders
+  fcd SUC! `ignoreDotFolders`: `false`
+  ```
+* `path`: Used to get the path to the configuration file (JSON)
+  
+  Example:
+  ```console
+  $ fcd-config path
+  fcd SUC! Path: `/Users/apple/Library/Preferences/fcd-nodejs/config.json`
+  ```
+* `reset [keys...]`: Used to reset all keys **or** the provided keys to their default values
+  
+  Example:
+  ```console
+  $ fcd-config reset ignoredFolders
+  fcd SUC! `ignoredFolders` reset successfully
+  $ fcd-config reset ignoredFolders,ignoreDotFolders
+  fcd SUC! `ignoredFolders,ignoreDotFolders` reset successfully
+  $ fcd-config reset
+  fcd SUC! Config reset successfully
+  ```
 
 
 

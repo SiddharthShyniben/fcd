@@ -17,6 +17,7 @@ Please note we have a code of conduct, please follow it in all your interactions
 
 Don't know what to contribute? Here's a todo list for everyone (and myself):
 
-- [ ] Add config support
+- [x] Add config support
   - See [`conf`](https://github.com/sindresorhus/conf)
-- [x] Relative paths are broken
+- [x] Fix Relative paths
+- [ ] Caching?

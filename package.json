@@ -1,10 +1,11 @@
 {
   "name": "fcd",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "description": "Faster cd-ing.",
   "main": "bin/index.js",
   "bin": {
-    "fcd": "./bin/index.js"
+    "fcd": "./bin/index.js",
+    "fcd-config": "./bin/config-cli.js"
   },
   "files": [
     "bin/"
@@ -18,13 +19,11 @@
   "license": "GPL-3.0",
   "dependencies": {
     "clipboardy": "^2.3.0",
+    "conf": "^7.1.2",
     "enquirer": "^2.3.6",
     "findit": "^2.0.0",
     "ora": "^5.2.0",
     "tilde-expansion": "^0.0.0",
     "yargs": "^16.2.0"
-  },
-  "devDependencies": {
-    "jshint": "^2.12.0"
   }
 }
